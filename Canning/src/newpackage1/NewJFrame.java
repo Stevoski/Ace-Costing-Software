@@ -5541,8 +5541,7 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel131, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField97))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jTextField97)))
                     .addGroup(jPanel22Layout.createSequentialGroup()
                         .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton58, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -17590,7 +17589,6 @@ public class NewJFrame extends javax.swing.JFrame {
     private void jMenuItem38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem38ActionPerformed
         try {
             jComboBox3.setModel(new DefaultComboBoxModel(factoryReturns.getFactories().toArray()));
-
             SupCombox.setModel(new DefaultComboBoxModel(supplierReturns.getSupplier().toArray()));
             rawCombox.setModel(new DefaultComboBoxModel(allIngredientReturns.getallmainMaterial().toArray()));
             ExportAndImport.issuematerial.setModel(new DefaultComboBoxModel(allIngredientReturns.getallmainMaterial().toArray()));
@@ -17599,7 +17597,12 @@ public class NewJFrame extends javax.swing.JFrame {
             ExportAndImport.issueto.setModel(new DefaultComboBoxModel(factoryReturns.getFactories().toArray()));
             ExportAndImport.categorizer.setModel(new DefaultComboBoxModel(factoryReturns.getCategories().toArray()));
             BorderLayout borderlayout = new BorderLayout();
-//        borderlayout
+ExportAndImport.jPanel5.removeAll();
+  ExportAndImport.jPanel5.add(ExportAndImport.raw_material_reception);
+        ExportAndImport.jPanel5.repaint();
+        ExportAndImport.jPanel5.revalidate();
+ 
+//     borderlayout
             IngFormer.removeAll();
 //             IngFormer.add(ExportAndImport.raw_material_reception);
             IngFormer.add(ExportAndImport.raw_material_reception, borderlayout.CENTER);

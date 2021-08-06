@@ -7770,7 +7770,7 @@ jLabel111.setText("Amount");
             connpAST.setAutoCommit(false);
             int erowsi = mainproduct.getRowCount();
 
-            String querycoh = "insert into productproduction (ProductionID, voucher_no, product_name, quantity, factory, groupe, manpower_hrs, seasonal, permanent, splitter, total_manpower, total_seasonal, total_permanent, waste, addedby, price, stock_bf, stock_cf, amount, date, status, batch_no) VALUES (?,?,?,?,?,?,?,?)";
+            String querycoh = "insert into productproduction (voucher_no, product_name, quantity, factory, groupe, manpower_hrs, seasonal, permanent, splitter, total_manpower, total_seasonal, total_permanent, waste, addedby, price, stock_bf, stock_cf, amount, date, status, batch_no) VALUES (?,?,?,?,?,?,?,?)";
             PreparedStatement psyAST = db_Connection.getInstance().prepareStatement(querycoh);
             for (int row = 0; row < erowsi; row++) {
                 String pid = (String) mainproduct.getValueAt(row, 0);

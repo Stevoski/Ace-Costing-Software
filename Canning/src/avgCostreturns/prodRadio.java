@@ -86,18 +86,20 @@ public class prodRadio {
             String clik = "SELECT * FROM `new_view` WHERE new_view.product='" + avgdisp + "' and new_view.factory='" + pck + "' ";
 
             try {
-                ResultSet rsPadd;
+               ;
                 try (PreparedStatement psy = db_Connection.getInstance().prepareStatement(clik)) {
                     psy.setString(1, dateaverage2);
                     psy.setString(2, dateaverage1);
-                    rsPadd = psy.executeQuery();
+                    ResultSet  rsPadd = psy.executeQuery();
                     while (rsPadd.next()) {
                         jTableavg.setModel(rsToTableModels.aboveMarginModel.buildTableModel(rsPadd));
 //                    model.addRow(new Object[]{rsPadd.getString("product"), rsPadd.getString("factory"), rsPadd.getDouble("rawcost"), rsPadd.getDouble("cancost"), rsPadd.getDouble("fuelcost"), rsPadd.getDouble("elecost"), rsPadd.getDouble("dieselcost"), rsPadd.getDouble("mancost"), rsPadd.getDouble("wastecost"), rsPadd.getDouble("averageprice"), rsPadd.getString("date"), rsPadd.getDouble("quantity")});
                     }
+                    rsPadd.close();
+          psy.close();
                 }
-          rsPadd.close();
-            } catch (Exception e) {
+          
+                      } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Error connection");
                 e.printStackTrace();
             }
